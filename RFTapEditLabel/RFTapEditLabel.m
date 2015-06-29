@@ -21,6 +21,8 @@
 
 @implementation RFTapEditLabel
 
+@synthesize alertTitle = _alertTitle;
+
 - (id)initWithFrame:(CGRect)frame title:(NSString *)title secureTextEntry:(BOOL)secureTextEntry
 {
     self = [super initWithFrame:frame];
