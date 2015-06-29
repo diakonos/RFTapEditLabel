@@ -25,6 +25,7 @@
 
 @property (nonatomic, readwrite) NSString *labelText;
 @property (nonatomic, readwrite) NSString *placeholderText;
+@property (nonatomic, readwrite) NSString *alertTitle;
 
 @property (nonatomic, readwrite) BOOL isMasked;
 @property (nonatomic, readwrite) BOOL isEditable;
