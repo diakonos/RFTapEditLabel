@@ -10,8 +10,6 @@
 
 @interface RFTapEditLabel ()
 
-
-
 @property (strong, nonatomic) UIAlertView *alertView;
 
 @property (nonatomic, readwrite) BOOL secureTextEntry;
@@ -78,14 +76,16 @@
     _inPlaceholderState = YES;
     
     self.text = _placeholderText;
-    self.textColor = [UIColor grayColor];
+    // Justin Ling - changed color from grayColor to lightGrayColor
+    self.textColor = [UIColor lightGrayColor];
 }
 
 -(void)setLabelTextCustom:(NSString *)labelText {
     _inPlaceholderState = NO;
     
     self.text = labelText;
-    self.textColor = [UIColor blackColor];
+    // Justin Ling - changed color from blackColor to darkGrayColor
+    self.textColor = [UIColor darkGrayColor];
 }
 
 -(void)labelWasTapped {
@@ -158,13 +158,15 @@
             }
             
             if (_labelText.length != 0) {
-                self.textColor = [UIColor blackColor];
+                // Justin Ling - changed color from blackColor to darkGrayColor
+                self.textColor = [UIColor darkGrayColor];
                 _inPlaceholderState = NO;
                 
                 [self saveString:NO];
             }
             else {
-                self.textColor = [UIColor grayColor];
+                // Justin Ling - changed color from grayColor to lightGrayColor
+                self.textColor = [UIColor lightGrayColor];
                 self.text = _placeholderText;
                 _inPlaceholderState = YES;
                 
@@ -225,6 +227,12 @@
     }
     
     return maskString;
+}
+
+/* Justin Ling -- allowing alertView title to be editable after init */
+- (void)setAlertTitle:(NSString *)alertTitle {
+    _alertTitle = alertTitle;
+    _alertView.title = _alertTitle;
 }
 
 
